@@ -1,0 +1,6 @@
+Co training is a method for combining labeled and unlabeled data when examples can be thought of as containing two distinct sets of features .
+It has had a number of practical successes yet previous theoretical analyses have needed very strong assumptions on the data that are unlikely to be satisfied in practice .
+In this paper we propose a much weaker expansion assumption on theunderlying data distribution that we prove is sufficient for iterative co training to succeed given appropriately strong PAC learning algorithms on each feature set and that to some extent is necessary as well .
+Thisexpansion assumption in fact motivates the iterative nature of the original cotraining algorithm unlike stronger assumptions such as independence given the label that allow a simpler oneshot cotraining to suc ceed .
+We also heuristically analyze the effect on performance of noise inthe data .
+Predicted behavior is qualitatively matched in synthetic experi ments on expander graphs .

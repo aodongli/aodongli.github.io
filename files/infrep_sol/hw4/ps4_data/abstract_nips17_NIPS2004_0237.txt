@@ -1,0 +1,5 @@
+Experimental studies have observed synaptic potentiation when a presynaptic neuron fires shortly before a postsynaptic neuron andsynaptic depression when the presynaptic neuron fires shortly after .
+The dependence of synaptic modulation on the precise timing of the two action potentials is known as spiketiming dependent plasticity or STDP .
+We derive STDP from a simple computational principle synapses adapt so as to minimize the postsy naptic neuron s variability to a given presynaptic input causing the neuron s output to become more reliable in the face of noise Using an entropyminimization objective function and the biophysically realistic spikeresponse model of Gerstner we simu late neurophysiological experiments and obtain the characteristic STDP curve along with other phenomena including the reduction in synaptic plasticity as synaptic efficacy increases .
+We compare ouraccount to other efforts to derive STDP from computational princi ples and argue that our account provides the most comprehensive coverage of the phenomena .
+Thus reliability of neural response in the face of noise may be a key goal of cortical adaptation .

@@ -1,0 +1,19 @@
+We introduce binary matrix factorization a novel model for unsupervised matrix decomposition .
+The decomposition is learned by fitting a non parametric Bayesian probabilistic model with binary latent variables to a matrix of dyadic data .
+Unlike bi clustering models which assign each row or column to a single cluster based on a categorical hidden feature our binary feature model reflects the prior belief that items and attributes can be associated with more than one latent cluster at a time .
+We provide simple learning and inference rules for this new model and show how to extend it to an infinite model in which the number of features is not a priori fixed but is allowed to grow with the size of the data .
+ Distributed representations for dyadic data One of the major goals of probabilistic unsupervised learning is to discover underlying or hidden structure in a dataset by using latent variables to describe a complex data generation process .
+In this paper we focus on dyadic data our domains have two finite sets of objects entities and observations are made on dyads pairs with one element from each set .
+Examples include sparse matrices of movie viewer ratings word document counts or product customer purchases .
+A simple way to capture structure in this kind of data is to do bi clustering possibly using mixture models by grouping the rows and independently or simultaneously the columns .
+The modelling assumption in such a case is that movies come in types and viewers in types and that knowing the type of movie and type of viewer is sufficient to predict the response .
+Clustering or mixture models are quite restrictive their major disadvantage is that they do not admit a componential or distributed representation because items cannot simultaneously belong to several classes .
+ A movie for example might be explained as coming from a cluster of dramas or comedies a viewer as a single male or as a young mother .
+We might instead prefer a model e g .
+ in which objects can be assigned to multiple latent clusters a movie might be a drama and have won an Oscar and have subtitles a viewer might be single and female and a university graduate .
+Inference in such models falls under the broad area of factorial learning e g .
+ in which multiple interacting latent causes explain each observed datum .
+In this paper we assume that both data items rows and attributes columns have this kind of componential structure each item row has associated with it an unobserved vector of binary features similarly each attribute column has a hidden vector of binary features .
+Knowing the features of the item and the features of the attribute are sufficient to generate before noise the response at that location in the matrix .
+In effect we are factorizing a real valued data response where and are binary feature a distribution defined by the product matrix matrices and is a real valued weight matrix .
+Below we develop this binary matrix.

@@ -1,1 +1,393 @@
-Hello World
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+    body {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #003399;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #CC0000;
+    }
+
+    .musicbg {
+        background: darkorchid;
+        position: fixed;
+        right: 35px;
+    }
+</style>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('trick').innerHTML = decode('205-121-233-64-203-206-64-225-231-166-215-212-201-202-166-64');
+    }
+
+    function random(s, N) {
+        var x = Math.sin(s) * 10000;
+        var r = x - Math.floor(x);
+        return Math.floor(r * N);
+    }
+
+    function swap(arr, i, j) {
+        if (i == j)
+            return;
+        arr[i] ^= arr[j];
+        arr[j] ^= arr[i];
+        arr[i] ^= arr[j];
+    }
+
+    function getRndArr(N, seed) {
+        var arr = new Array(N);
+        var i, s;
+        for (i = 0; i < N; i++)
+            arr[i] = i;
+        for (s = seed, i = 0; i < N - 1; i++, s += 3) {
+            L = N - i;
+            ind = random(s, L);
+            swap(arr, ind, L - 1);
+        }
+        return arr;
+    }
+
+    function trans(text) {
+        arr = getRndArr(text.length, 7);
+        var outtxt = '';
+        for (var i = 0; i < text.length; i++)
+            outtxt += text[arr[i]];
+        return outtxt;
+    }
+
+    function transback(text) {
+        arr = getRndArr(text.length, 7)
+        var out = new Array(text.length);
+        for (var i = 0; i < text.length; i++)
+            out[arr[i]] = text[i];
+        return out.join('');
+    }
+
+    function num2strbase(num, base) {
+        if (num == 0)
+            return '0';
+        var digits = new Array();
+        for (; num > 0; num = parseInt(num / base))
+            digits.push(num % base);
+        digits.reverse();
+        return digits.join('');
+    }
+
+    function str2numbase(str, base) {
+        var sum = 0;
+        for (var i = 0; i < str.length; i++)
+            sum = sum * base + (str[i].charCodeAt() - '0'.charCodeAt());
+        return sum;
+    }
+
+    function alpha2code(str, base) {
+        var codes = new Array();
+        for (var i = 0; i < str.length; i++)
+            codes.push(num2strbase(str[i].charCodeAt(), base));
+        return codes.join('-');
+    }
+
+    function code2alpha(code, base) {
+        var codes = code.split('-');
+        str = '';
+        for (var i = 0; i < codes.length; i++)
+            str += String.fromCharCode(str2numbase(codes[i], base));
+        return str;
+    }
+
+    function decode(code) {
+        alpha = code2alpha(code, 7);
+        return transback(alpha);
+    }
+
+    function encode(str) {
+        tmp = trans(str);
+        return alpha2code(tmp, 7);
+    }
+
+    function copy(dest, source) {
+        if (dest.source == source) {
+            dest.innerHTML = "";
+            dest.source = null;
+        }
+        else {
+            dest.innerHTML = source.innerHTML;
+            dest.source = source;
+        }
+        dest.blur();
+    }
+
+
+</script>
+
+    <title>Aodong Li's Homepage</title>
+    
+    <meta name="robots" content="index,follow">
+</head>
+
+<body>
+<!--autoplay="autoplay"-->
+
+<table cellpadding="20" style="font-size: 18px">
+    <tbody><tr>
+        <td><a href="./files/aodong.jpg"><img src="./files/aodong.jpg" alt="Aodong Li" width="210" height="220"></a></td>
+        <td>
+            <h1> 李傲冬 </h1>
+            <p><font size="+2"><b>Aodong Li</b></font></p>
+            <p><font size="+1"><b>Master in Computer Science</b>
+            <p><!-- <font size="+0"><b>Courant Institute of Mathematical Sciences</b> -->
+            <p><font size="+1"><b>New York University</b> 
+                <br>
+                <br>
+                <b>Email</b>: </font> aodong.li@cs.nyu.edu, al5350@nyu.edu <br>
+                <a href="#research">[Research Interest]</a> <a href="#education">[Education]</a> <a href="#publications">[Publications]</a>
+                <a href="#technical_reports">[Technical Reports]</a> <a href="#projects">[Projects]</a>
+                <a href="#miscellaneous">[Miscellaneous]</a>
+                <a href="#academic_activities">[Academic Activities]</a> <a href="#myself">[Myself]</a> <br>
+            </p>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+<p>
+    I'm a second-year master student at Courant Institute at NYU in Computer Science. And I'm also a recipient of the Computer Science Department’s M.S. Thesis/Research Fellowship for Fall 2018. Here I'm fortunate to work with <a href="https://cims.nyu.edu/~rajeshr/" target="_blank">Prof. Rajesh Ranganath</a> and <a href="http://eeweb.poly.edu/~yao/" target="_blank">Prof. Yao Wang</a>.
+    <br>
+    Before joining NYU, I got my master and bachelor degrees from Beijing University of Posts and Telecommunications, and I also worked closely with <a href="http://166.111.134.19:8081/wangd/" target="_blank">Prof. Dong Wang</a> in Tsinghua University. 
+    <br>
+    Here is my <a href="./files/CV.pdf" target="_blank">CV</a>.
+</p>
+
+<hr>
+<a name="research" class="disabled"><h2> Research Interest </h2></a>
+<ul>
+    <li>
+    I'm generally interested in inference and various topics in statistical machine learning. I have also spent time working on natural language processing.
+    </li>
+</ul>
+
+<hr>
+<a name="education" class="disabled"><h2> Education </h2></a>
+<ul>
+    <li> 2017.9 - Present: master student, New York University, US</li>
+    <li> 2014.9 - 2017.3: received a M.E. Degree, Bejing University of Posts and Telecommunications, China</li>
+    <li> 2010.9 - 2014.6: received a B.E. Degree, Bejing University of Posts and Telecommunications, China</li>
+</ul>
+
+<hr>
+<a name="publications" class="disabled"><h2> Publications </h2></a>
+<!-- <select id="select-year" onchange="selYear()">
+    <option value="all">all</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+</select> -->
+
+<div id="publications"></div>
+<script>
+    var publications = [
+        {
+            url: 'https://arxiv.org/abs/1710.01789',
+            title: 'Enhanced Neural Machine Translation by Learning from Draft',
+            authers: ['Aodong Li', 'Shiyue Zhang', 'Dong Wang', 'Thomas Fang Zheng'],
+            pub: 'APSIPA ASC ',
+            time: '2017',
+            code: 'https://github.com/aodongli/LearningFromDraft'
+        }
+    ];
+    var filter = function (year) {
+        var final = [];
+        for (var i = 0; i < publications.length; i++) {
+            if (publications[i].time == year) {
+                final.push(publications[i]);
+            }else if(year == 'all'){
+                final.push(publications[i]);
+            }
+        }
+        return final;
+    };
+    var outputHtml = function (publicationsArr) {
+        var html = [];
+        for (var i = 0; i < publicationsArr.length; i++) {
+            html.push('<ul><li><b><a href="' + publicationsArr[i].url + '" target="_blank">' + publicationsArr[i].title + '</a></b>');
+            if ('code' in publicationsArr[i]) {
+                html.push('<a href="' + publicationsArr[i].code + '"target="_blank"> [code]</a>')
+            }
+            html.push('<br>');
+            var auther = [];
+            for (var j = 0; j < publicationsArr[i].authers.length; j++) {
+                if (publicationsArr[i].authers[j] == 'Aodong Li') {
+                    auther.push('<b>Aodong Li</b>');
+                } else if (publicationsArr[i].authers[j] == 'Aodong Li*') {
+                   auther.push('<b>Aodong Li*</b>');
+                } else {
+                    auther.push(publicationsArr[i].authers[j]);
+                }
+            }
+            html.push(auther.join(', '));
+            html.push('.</li>');
+            html.push(publicationsArr[i].pub + publicationsArr[i].time);
+            html.push('</ul>');
+        }
+        var container = document.getElementById('publications');
+        container.innerHTML = html.join('');
+    };
+    var initPub = function (year) {
+        var publicationsArr = filter(year);
+        outputHtml(publicationsArr);
+    };
+    var selYear = function () {
+        var selector = document.getElementById('select-year');
+        var year = selector.value;
+        initPub(year);
+    };
+    window.onload = function () {
+        initPub("all");
+    };
+
+</script>
+
+<hr>
+<a name="technical_reports" class="disabled"><h2> Technical Reports </h2></a>
+<ul>
+    <li><b><a href="./files/360-degree-video.pdf" target="_blank">360-degree Video Streaming by Deep Reinforcement Learning</a></b>
+    <br>
+    <b>Aodong Li</b>, Liyang Sun, Chenge Li, Yao Wang, Yong Liu. 
+    <br>
+    November, 2018<br>
+    </li>
+</ul>
+
+<hr>
+<a name="projects" class="disabled"><h2> Projects </h2></a>
+
+<a name="ongoing_projects" class="disabled"><h3> Ongoing Projects </h3></a>
+<ul>
+    <li><b>Inferring Age Distribution of Blood Cells</b>
+    <br>
+    September 2018 - present
+    <br>    
+    Advised by <a href="https://cims.nyu.edu/~rajeshr/" target="_blank">Prof. Rajesh Ranganath</a> and <a href="https://csb.mgh.harvard.edu/john_higgins" target="_blank">Prof. John Higgins</a>.
+    <br>
+    Try to infer the age distribution from a convolutional glycation process. Methods include constrained optimization and compressed sensing based idea.
+    </li>
+    <li><b>360-degree Video Streaming by Deep Reinforcement Learning</b>
+    <br>
+    June 2018 - present 
+    <br>
+    Advised by <a href="http://eeweb.poly.edu/~yao/" target="_blank">Prof. Yao Wang</a> and <a href="http://eeweb.poly.edu/faculty/yongliu/" target="_blank">Prof. Yong Liu</a>.
+    <br>
+    Apply deep reinforcement learning technique for 360-degree video streaming. Tackle the challenges special in this task.
+    </li>
+    <li><b>Black Box Variational Inference on Latent Dirichlet Allocation</b>
+    <br>
+    Fall 2018
+    <br>
+    Class project for Foundations of Machine Learning. Here is a short <a href="./files/FML-FA18-Proposal.pdf" target="_blank">proposal</a>.
+    </li>
+</ul>
+
+<a name="class_projects" class="disabled"><h3> Class Projects </h3></a>
+<ul>
+    <li><b><a href="./files/cvx_opt_report.pdf" target="_blank">Supervised Linear Distance Metric Learning with Convex Optimization</a></b>
+    <br>
+    Convex and Nonsmooth Optimization, Spring 2018<br>
+    </li>
+    <li><b><a href="./files/DGM_report.pdf" target="_blank">Inferring age distribution of blood cells</a></b>
+    <br>
+    Deep Generative Model, Spring 2018<br>
+    </li>
+</ul>
+
+<hr>
+<a name="miscellaneous" class="disabled"><h2> Miscellaneous </h2></a>
+
+<ul>
+    <li><b><a href="./files/notes_intermediate_stat.pdf" target="_blank">Notes taken from CMU 36-705 Intermediate Statistics</a></b></li>
+    <li><b>Notes taken from Stanford EE261 The Fourier Transform and its Applications<a href="./files/notes_signalproc_1.pdf" target="_blank"> [part1]</a><a href="./files/notes_signalproc_2.pdf" target="_blank"> [part2]</a><a href="./files/notes_signalproc_3.pdf" target="_blank"> [part3]</a></b></li>
+    <li><b><a href="./files/notes_inf_rep.pdf" target="_blank">Notes taken from NYU DS-GA-1005/CSCI-GA.2569 Inference and Representation</a><a href="./files/infrep_sol/" target="_blank"> [part of homework solutions]</a></b></li>
+    <li><b><a href="./files/real_analysis_1.pdf" target="_blank">Hand written notes taken from HMC math131 Real Analysis I</a></b></li>
+    <li><b><a href="./files/rl_policy_gradient.pdf" target="_blank">A short introduction of policy gradient method in reinforcement learning</a></b></li>
+    <li><b><a target="_blank">An illustration on missing at random</a></b></li>
+    <li><b><a target="_blank">GMM for image clustering</a></b></li>
+    <li><b><a href="./files/centering_PCA_whitening.pdf" target="_blank">An illustration on the effects of the centering for PCA and whitening</a></b></li>
+    <li><b><a href="./files/EM algorithm and variational inference.pdf" target="_blank">EM algorithm and variational inference</a></b></li>
+    <li><b><a href="./files/fundaments of complex exponentials.pdf" target="_blank">Some fundamentals of complex exponentials</a></b></li>
+    <li><b><a href="./files/visulization of the intercept of the linear regression.pdf" target="_blank">Visulization of the intercept of the linear regression</a></b></li>
+    <li><b><a href="./files/making up the gaps of learning theory.pdf" target="_blank">Making up the gaps in statistical learning theory for the course DS-GA 1003/CSCI-GA 2567</a></b></li>
+    <li><b><a href="./files/PCA_not_help_classification.pdf" target="_blank">An visualization on why PCA does not help classification</a></b></li>
+    <li><b><a href="./files/some_facts_of_rank.pdf" target="_blank">Some facts of rank</a></b></li>
+    <li><b><a href="./files/TwoWaysCau-Sch.pdf" target="_blank">Two ways to prove Cauchy-Schwarz inequality</a></b></li>
+</ul>
+
+<!-- <hr>
+<a name="software" class="disabled"><h2> Software </h2></a>
+
+<ul>
+    <li>A wechat miniprogram: 薇你写诗, which is based on an AI poet: 薇薇. @copyright from <a href="http://cslt.riit.tsinghua.edu.cn/">CSLT, THU</a>.<br>
+        She will write a Chinese poem for you based on your name, age and gender.<br>
+        Scan the QR code below to have a try: <br>
+    </li>
+    <a href="./Shiyue Zhang&#39;s Homepage_files/vivi.jpg"><img src="./Shiyue Zhang&#39;s Homepage_files/vivi.jpg" width="150" height="150"></a>
+
+</ul> -->
+
+<hr>
+<a name="academic_activities" class="disabled"><h2> Academic Activities </h2></a>
+
+<a name="talks" class="disabled"><h3> Talks </h3></a>
+
+<ul>
+    <li><b><a href="./files/learning_from_draft.pdf" target="_blank">Enhanced Neural Machine Translation by Learning from Draft </a></b>, CSLT, Tsinghua University, Beijing, China, June 2017</li>
+</ul>
+
+
+<a name="awards" class="disabled"><h3> Awards </h3></a>
+
+<ul>
+    <li><b>Computer Science Department’s M.S. Thesis/Research Fellowship, Fall 2018</b></li>
+</ul>
+
+
+<a name="others" class="disabled"><h3> Others </h3></a>
+
+<ul>
+    <li><b> Teaching assistant</b>: <b><a href="https://cs.nyu.edu/courses/fall18/CSCI-GA.1170-001/" target="_blank">Foundamental Algorithms, Fall 2018</a></b></li>
+</ul>
+
+<hr>
+<a name="myself" class="disabled"><h2> Myself </h2></a>
+<ul>
+    <li>
+        My hobby is basketball. And I'm a fan of <a href="https://en.wikipedia.org/wiki/Houston_Rockets">Houston Rockets</a> (not a surprise, because of <a href="https://en.wikipedia.org/wiki/Yao_Ming" target="_blank">Yao Ming</a>).
+    </li>
+    <li> My Hometown: <a href="https://en.wikipedia.org/wiki/Nanyang,_Henan" target="_blank">Nanyang</a>, <a href="https://en.wikipedia.org/wiki/Henan" target="_blank">Henan</a>, <a href="https://en.wikipedia.org/wiki/China" target="_blank">China</a>
+    </li>
+</ul>
+
+
+last updated: 2018/11/19
+
+<!-- <ul>
+    <a href="https://info.flagcounter.com/3P4w"><img src="./files/saved_resource" alt="Flag Counter" border="0"></a>
+</ul> -->
+
+<script>
+
+</script>
+
+
+
+</body></html>

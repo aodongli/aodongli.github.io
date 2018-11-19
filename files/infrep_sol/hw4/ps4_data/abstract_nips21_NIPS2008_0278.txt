@@ -1,0 +1,6 @@
+Uncertainty is omnipresent when we perceive or interact wit h our environment and the Bayesian framework provides computational methods for dealing with it .
+Mathematical models for Bayesian decision making typically require datastructures that are hard to implement in neural networks .
+Th is article shows that even the simplest and experimentally best supported type of synaptic plasticity Hebbian learning in combination with a sparse redundant neural code can in principle learn to infer optimal Bayesian decisions .
+We pre sent a concrete Hebbian learning rule operating on log probability ratios .
+Modula ted by reward signals this Hebbian plasticity rule also provides a new perspective for understanding how Bayesian inference could support fast reinforcement le arning in the brain .
+In particular we show that recent experimental results by Ya ng and Shadlen on reinforcement learning of probabilistic inference in prim ates can be modeled in this way .
