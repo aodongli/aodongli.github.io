@@ -209,6 +209,8 @@
             authers: ['Aodong Li', 'Alex Boyd', 'Padhraic Symth', 'Stephan Mandt'],
             pub: 'NeurIPS ',
             time: '(2021)',
+            poster: './files/poster_neurips2021.png',
+            video: 'https://nips.cc/virtual/2021/poster/27983',
             // code: 'https://github.com/aodongli/LearningFromDraft'
         },
         {
@@ -253,6 +255,12 @@
             html.push('<ul><li><b><a href="' + publicationsArr[i].url + '" target="_blank">' + publicationsArr[i].title + '</a></b>');
             if ('code' in publicationsArr[i]) {
                 html.push('<a href="' + publicationsArr[i].code + '"target="_blank"> [code]</a>')
+            }
+            if ('poster' in publicationsArr[i]) {
+                html.push('<a href="' + publicationsArr[i].poster + '"target="_blank"> [poster]</a>')
+            }
+            if ('video' in publicationsArr[i]) {
+                html.push('<a href="' + publicationsArr[i].video + '"target="_blank"> [video]</a>')
             }
             html.push('<br>');
             var auther = [];
