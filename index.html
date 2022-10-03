@@ -204,14 +204,15 @@
 <script>
     var publications = [
         {
-            // url: './files/Variational_Beam_Search____NeuIPS_2021.pdf',
+            url: 'https://arxiv.org/abs/2202.08088',
             title: 'Latent Outlier Exposure for Anomaly Detection with Contaminated Data',
             authers: ['Chen Qiu*', 'Aodong Li*', 'Marius Kloft', 'Maja Rudolph', 'Stephan Mandt'],
             pub: 'ICML ',
             time: '(2022)',
-            // poster: './files/poster_neurips2021.png',
+            poster: './files/poster_loe_icml2022.pdf',
             // video: 'https://nips.cc/virtual/2021/poster/27983',
-            // code: 'https://github.com/mandt-lab/variational-beam-search'
+            code: 'https://github.com/boschresearch/LatentOE-AD',
+            code2: 'https://github.com/aodongli/Latent-Outlier-Exposure',
         },
         {
             url: './files/Variational_Beam_Search____NeuIPS_2021.pdf',
@@ -265,6 +266,9 @@
             html.push('<ul><li><b><a href="' + publicationsArr[i].url + '" target="_blank">' + publicationsArr[i].title + '</a></b>');
             if ('code' in publicationsArr[i]) {
                 html.push('<a href="' + publicationsArr[i].code + '"target="_blank"> [code]</a>')
+            }
+            if ('code2' in publicationsArr[i]) {
+                html.push('<a href="' + publicationsArr[i].code2 + '"target="_blank"> [code2]</a>')
             }
             if ('poster' in publicationsArr[i]) {
                 html.push('<a href="' + publicationsArr[i].poster + '"target="_blank"> [poster]</a>')
