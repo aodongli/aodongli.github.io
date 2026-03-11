@@ -250,8 +250,8 @@
             time: '(2024)',
             // poster: './files/poster_loe_icml2022.pdf',
             // video: 'https://nips.cc/virtual/2021/poster/27983',
-            // code: 'https://github.com/aodongli/zero-shot-ad-via-batch-norm',
-            // code2: 'https://github.com/aodongli/Latent-Outlier-Exposure',
+            code: 'https://github.com/aodongli/tab-anomaly-detection-using-llm',
+            model: 'https://huggingface.co/aodongl/Mistral-AD/blob/main/README.md',
         },
         {
             url: 'https://arxiv.org/abs/2302.07849',
@@ -348,6 +348,9 @@
             }
             if ('code2' in publicationsArr[i]) {
                 html.push('<a href="' + publicationsArr[i].code2 + '"target="_blank"> [code2]</a>')
+            }
+            if ('model' in publicationsArr[i]) {
+                html.push('<a href="' + publicationsArr[i].model + '"target="_blank"> [model]</a>')
             }
             if ('poster' in publicationsArr[i]) {
                 html.push('<a href="' + publicationsArr[i].poster + '"target="_blank"> [poster]</a>')
